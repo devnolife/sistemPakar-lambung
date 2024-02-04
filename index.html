@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediksi Penyakit Lambung</title>
+    <script src="https://unpkg.com/htmx.org@1.7.0/dist/htmx.js"></script>
+</head>
+<style>
+    form {
+        display: flex;
+        flex-direction: column;
+        gap : .5rem;
+        
+    }
+
+    input {
+        all : unset;
+        box-shadow: 0px 0px 1px 0px black;
+        padding: .2rem .4rem;
+        border-radius: 1rem;
+    }
+
+    button {
+        all : unset;
+        box-shadow: 0px 0px 1px 0px black;
+        padding: .2rem .4rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+    }
+
+    @media screen and (min-width: 768px) {
+        form {
+            width: 50%;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        form {
+            width: 30%;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        form {
+            width: 20%;
+        }
+    }
+
+    @media screen and (min-width: 2560px) {
+        form {
+            width: 10%;
+        }
+    }
+
+    
+</style>
+<body>
+    <h1>Prediksi Penyakit Lambung</h1>
+    
+    <form hx-post="/submit">
+        <input type="number" name="Bp" placeholder="Tekanan Darah" min="50" max="180">
+        <input type="number" name="Sg" placeholder="Sg Urin" min="1.003" max="1.020" step="0.001" >
+        <input type="number" name="Al" placeholder="Albumin"  min="0" max="5" step="1">
+        <input type="number" name="Su" placeholder="Kadar Gula"  min="0" max="5" step="1">
+        <input type="number" name="Rbc" placeholder="Sel Darah Merah"  min="0" max="1" step="1">
+        <input type="number" name="Bu" placeholder="Jumlah Nitrogen Urea" min="2" max="391" step="1">
+        <input type="number" name="Sc" placeholder="Kreatinin" min="1" max="76">
+        <input type="number" name="Sod" placeholder="Sodium" min="5" max="163" >
+        <input type="number" name="Pot" placeholder="Jumlah Pottasium" min="3" max="47" >
+        <input type="number" name="Hemo" placeholder="Jumlah Hemoglobin" min="3.1" max="17.8" step="0.1">
+        <input type="number" name="Wbcc" placeholder="Jumlah Total Leukesit" min="4000" max="11000" >
+        <input type="number" name="Rbcc" placeholder="Jumlah sel darah merah" min="4" max="6.1" step="0.1">
+        <input type="number" name="Htn" placeholder="Tekanan Darah Tinggi. 0 = tidak, 1 = ya " min="0" max="1">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
